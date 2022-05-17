@@ -1,0 +1,19 @@
+$primary: #7AADC5 ;
+$secondary: #79E8B0 ;
+$tertiary: #F9F871;
+
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: $primary;
+}
+
+h1 {
+    color: $secondary;
+}
+
+.logo {
+    width: 5rem;
+    height: 5rem;
+    padding-right: 0.5rem;
+}

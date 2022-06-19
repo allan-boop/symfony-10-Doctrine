@@ -6,15 +6,15 @@
    <h1>Toutes les series de la table program:</h1>
    {% for program in programs %}
       <div>
-         <h2>{{ loop.index }} / {{ program.title }} - Catégorie: {{ program.category.name }}</h2>
-         <p>{{ program.synopsis }}</p>
-         <a href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a>
+         <h2>{{ loop.index }} / Titre: {{ program.title }} - Catégorie: {{ program.category.name }}</h2>
+         <p>Synopsis: {{ program.synopsis }}</p>
+         <a class="tertiary" href="{{ path("program_show", { id: program.id }) }}">Voir la fiche</a>
       </div>
    {% else %}
       aucune série trouvée.
    {% endfor %}
 
-   <a href="{{ path('app_index') }}">
+   <a class="tertiary" href="{{ path('app_index') }}">
       Retour à l'accueil
    </a>
 {% endblock %}

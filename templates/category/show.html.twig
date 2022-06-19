@@ -8,14 +8,14 @@
             {% if category.name == program.category.name %}
                 <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
                 <div class="media-body">
-                    <h1 class="mt-0">{{ program.title }} #{{ program.id }}</h1>
-                    <p>{{ program.synopsis }}</p>
-                    <a href="{{ path("program_show", { id: program.id}) }}">Voir la fiche</a>
+                    <h1 class="mt-0">Titre: {{ program.title }} #{{ program.id }}</h1>
+                    <p>Synopsis: {{ program.synopsis }}</p>
+                    <a class="tertiary" href="{{ path("program_show", { id: program.id}) }}">Voir la fiche</a>
                 </div>
             {% endif %}
         {% endfor %}
     </div>
-    <a href="{{ path('category_index') }}">
+    <a class="tertiary" href="{{ path('category_index') }}">
       Retour à la liste des categories
     </a>
 {% endblock %}

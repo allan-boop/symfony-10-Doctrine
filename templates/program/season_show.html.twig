@@ -7,13 +7,10 @@
       <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
       <div class="media-body">
          <h1 class="mt-0">Titre: {{ program.title }}</h1>
-         <p>Synopsis{{ program.synopsis }}</p>
+         <p>Synopsis: {{ program.synopsis }}</p>
          <p>Categorie : {{ program.category.name }}</p>
-         <div>
-            {% for season in seasons %}
-               <a class="tertiary" href="{{ path('program_season_show', { programId: program.id, seasonId: season.id }) }}">Saison:{{ season.number }}</a>
-            {% endfor %}
-         </div>
+            <div>
+            </div>
       </div>
    </div>
    <a class="tertiary" href="{{ path('program_index') }}">

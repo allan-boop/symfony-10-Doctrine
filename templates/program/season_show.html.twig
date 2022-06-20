@@ -9,8 +9,12 @@
          <h1 class="mt-0">Titre: {{ program.title }}</h1>
          <p>Synopsis: {{ program.synopsis }}</p>
          <p>Categorie : {{ program.category.name }}</p>
+         <h2 class="mt-0">Episodes:</h2>
+         {% for episode in episodes %}
             <div>
+               <a class="tertiary" href="{{ path('program_episode_show', { programId: program.id, seasonId: season.id, episodeId: episode.id }) }}">Titre: {{ episode.title}} n°{{ episode.number }}</p>
             </div>
+         {% endfor %}
       </div>
    </div>
    <a class="tertiary" href="{{ path('program_index') }}">

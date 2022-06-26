@@ -37,7 +37,7 @@ class ProgramController extends AbstractController
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted()){
+        if($form->isSubmitted() && $form->isValid()) {
             $programRepository->add($program, true);
 
             return $this->redirectToRoute('program_index');
@@ -53,9 +53,9 @@ class ProgramController extends AbstractController
     {
         $season = $seasonRepository->findByProgram($program);
         if (!$program) {
-            throw $this->createNotFoundException(
-                'No program with id : '.$id. ' found in program\'s table.'
-            );
+                throw $this->createNotFoundException(
+                    'No program with id : '.$id. ' found in program\'s table.'
+                );
         }
         return $this->render('program/show.html.twig', [
             'program' => $program,
